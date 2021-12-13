@@ -1,0 +1,22 @@
+.rendu {
+    color:green;
+    border:1px green;
+}
+  .nonrendu {
+    color:red;
+    border:1px red;
+  }
+  
+  .container {
+    display:flex;
+    flex-direction: column;
+  }
+  .listAssignements{
+    margin-left:100px;
+    height:1000px;
+    width:800px;
+  }
+  .ajouterBtn {
+    align-self: flex-end;
+  }
+ 
