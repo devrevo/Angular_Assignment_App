@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './util/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +11,15 @@ import { AuthService } from './util/auth.service';
 export class AppComponent {
   titre = 'ToDo List';
 
-  constructor(private authService:AuthService) {}
+  constructor(private authService:AuthService,
+              private router:Router) {}
 
   loginLogout() {
     if(this.authService.loggedIn) {
       this.authService.logOut();
+      this.router.navigate(["/login"]);
     } else {
-      this.authService.logIn();
+      this.router.navigate(["/home"]);
     }
   }
 }

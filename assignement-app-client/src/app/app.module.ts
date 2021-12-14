@@ -21,13 +21,14 @@ import { NonrenduDirective } from './util/nonrendu.directive';
 import { FormsModule } from '@angular/forms';
 import { AssignmentDetailComponent } from './assignements/detailAssignment/detailAssignment.component';
 import { AddAssignmentComponent } from './assignements/addAssignment/addAssignment.component';
-
+import { LoginComponent } from './login/login.component';
 import { routes } from './app.routing';
 import { EditAssignmentComponent } from './assignements/editAssignment/editAssignment.component';
 @NgModule({
   declarations: [
     AppComponent,
     AssignementComponent,
+    LoginComponent,
     RenduDirective,
     NonrenduDirective,
     AssignmentDetailComponent,

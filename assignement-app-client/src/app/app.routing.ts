@@ -4,15 +4,17 @@ import { AssignmentDetailComponent } from "./assignements/detailAssignment/detai
 import { AssignementComponent } from "./assignements/assignements.component";
 import { EditAssignmentComponent } from "./assignements/editAssignment/editAssignment.component";
 import { AuthGuard } from "./util/auth.guard";
+import { LoginComponent } from "./login/login.component";
 
 const routes:Routes = [
   {
     path:"",
-    component:AssignementComponent
+    component:LoginComponent
   },
   {
     path:"home",
-    component:AssignementComponent
+    component:AssignementComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:"add",
@@ -27,7 +29,11 @@ const routes:Routes = [
     component:EditAssignmentComponent,
     canActivate: [AuthGuard]
   },
-  // appelé lorsque aucune route n'a matché...
+  {
+    path:"login",
+    component:LoginComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: '**',
     redirectTo: '/not-found.html'

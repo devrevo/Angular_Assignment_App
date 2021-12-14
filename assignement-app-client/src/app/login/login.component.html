@@ -1,0 +1,17 @@
+<h2>Login</h2>
+<form ngForm #loginForm class="form" (submit)="onSubmit(); loginForm.reset();">
+<mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Username" [(ngModel)]="username" name="name">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Password" [(ngModel)]="password" name="password">
+</mat-form-field>
+
+<button mat-stroked-button color="primary">
+    Se connecter
+</button>
+</form>
+  
