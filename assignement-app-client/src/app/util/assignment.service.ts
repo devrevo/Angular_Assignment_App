@@ -28,9 +28,7 @@ export class AssignmentService {
     return this.http.put(this.url,assignment);
   }
 
-  deleteAssignment(assignment:Assignment):Observable<string> {
-    const position = this.assignments.indexOf(assignment);
-    this.assignments.splice(position, 1);
-    return of("Assignment supprimé");
+  deleteAssignment(assignment:Assignment):Observable<any> {
+    return this.http.delete(this.url+"/"+assignment._id);
   }
 }

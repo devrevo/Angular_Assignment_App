@@ -12,20 +12,22 @@
       <mat-list *ngFor="let assignment of assignments; index as i">
         <nav>
           <a routerLink="/assignment/{{assignment.id}}">
-            <mat-list-item>
-                <div *ngIf="assignment.rendu; else nonsoumis">
-                    <mat-card style="color:green;">
-                        <mat-card-title>{{i}} - {{assignment.nom}}</mat-card-title>
-                        <mat-card-subtitle>{{assignment.dateDeRendu | date}}</mat-card-subtitle>
-                    </mat-card>
-                </div>
-                    <ng-template #nonsoumis>
-                        <mat-card style="color:red;margin-top:60px;">
-                            <mat-card-title>{{i}} - {{assignment.nom}}</mat-card-title>
-                            <mat-card-subtitle>{{assignment.dateDeRendu | date}}</mat-card-subtitle>
-                        </mat-card>
-                    </ng-template>
-\            </mat-list-item>
+            <div *ngIf="assignment.rendu; else nonsoumis">
+              <mat-list-item>
+                <mat-card style="color:green;">
+                    <mat-card-title>{{i}} - {{assignment.nom}}</mat-card-title>
+                    <mat-card-subtitle>{{assignment.dateDeRendu | date}}</mat-card-subtitle>
+                </mat-card>
+              </mat-list-item>
+            </div>
+            <ng-template #nonsoumis>
+              <mat-list-item>
+                <mat-card style="color:red;margin-top:60px;">
+                    <mat-card-title>{{i}} - {{assignment.nom}}</mat-card-title>
+                    <mat-card-subtitle>{{assignment.dateDeRendu | date}}</mat-card-subtitle>
+                </mat-card>
+              </mat-list-item>
+            </ng-template>
           </a>
         </nav>
       </mat-list>
