@@ -1,5 +1,11 @@
 # Angulat Assignment App Project
 
+This project has new features like a new login process connected to mongoDB.
+
+## Incomming
+
+There will be 2 rows in the home page one for the assignments already done and one for the ones not donne yet. and the student will have the possibility to drag in both directions each assignment to update its states.
+
 ## Server
 
 NodeJs backend with mongoDB.
